@@ -2,7 +2,7 @@ import {StyleSheet, SafeAreaView, Image, Text} from "react-native";
 
 export function HomeScreen(){
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.body}>
             <Image source={require ("../assets/image/MiniWarriorsCover.jpg")} style={styles.image}/>
             <Text style={styles.text}>Dear Players of Mini Warriors:</Text>
             <Text style={styles.text}>We are glad to present you with the Early Access version of Mini Warriors II updated to the current Mini Warriors games. This upgrade is exclusive for the Mini Warriors players.</Text>
@@ -18,7 +18,6 @@ export function HomeScreen(){
             <Text style={styles.text}>- And hundreds of new features waiting for you to explore</Text>
             <Text style={styles.text}>- An amazing continent newly-built 10 times larger to conquer</Text>
             <Text style={styles.text}>With recruiting powerful heroes and leading invincible armies.</Text>
-
         </SafeAreaView>
     )
 }
@@ -31,5 +30,8 @@ const styles = StyleSheet.create({
     },
     text: {
         textAlign: "center"
+    },
+    body: {
+        backgroundColor: "#cac492",
     }
 })
