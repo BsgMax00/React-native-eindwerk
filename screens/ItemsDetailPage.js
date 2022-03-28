@@ -1,6 +1,6 @@
 import {Text} from "react-native";
 
-export function HeroDetailPage(){
+export function ItemsDetailPage({data}){
     return (
         <Text>hello</Text>
     )
