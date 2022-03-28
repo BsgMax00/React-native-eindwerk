@@ -5,8 +5,8 @@ import {NavigationButton} from "../components/NavigationButton";
 
 export function HomeScreen(){
     return (
-        <ScrollView>
-            <View style={styles.body}>
+        <ScrollView style={styles.body}>
+            <View>
                 <HomeScreenTextDump/>
                 <NavigationButton navigationTarget={NAV_HEROES}/>
                 <NavigationButton navigationTarget={NAV_ITEMS}/>

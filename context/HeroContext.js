@@ -1,10 +1,10 @@
 import {createContext, useContext, useMemo, useState} from 'react';
-import {DATACHARACTERS} from "../data/data";
+import {DATA_CHARACTERS} from "../data/data";
 
 const HeroContext = createContext();
 
 export function HeroDataProvider(props){
-    const [heroes] = useState(DATACHARACTERS);
+    const [heroes] = useState(DATA_CHARACTERS);
 
     const api = useMemo(() => ({
         heroes

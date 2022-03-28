@@ -1,6 +1,6 @@
 import {FlatList, StyleSheet} from "react-native";
 import {useHeroDataContext} from "../context/HeroContext";
-import {HeroTile} from "../components/Tile";
+import {HeroTile} from "../components/HeroTile";
 
 export function HeroPage(){
     const {heroes} = useHeroDataContext();

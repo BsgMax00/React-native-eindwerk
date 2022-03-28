@@ -1,5 +1,5 @@
 import {FlatList, StyleSheet} from "react-native";
-import {ItemTile} from "../components/Tile";
+import {ItemTile} from "../components/ItemTile";
 import {useItemDataProvider} from "../context/ItemContext";
 
 export function ItemsPage(){

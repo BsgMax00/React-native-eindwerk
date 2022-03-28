@@ -1,10 +1,10 @@
 import {createContext, useContext, useMemo, useState} from 'react';
-import {DATAITEMS} from "../data/data";
+import {DATA_ITEMS} from "../data/data";
 
 const ItemContext = createContext();
 
 export function ItemDataProvider(props){
-    const [equipments] = useState(DATAITEMS);
+    const [equipments] = useState(DATA_ITEMS);
 
     const api = useMemo(() => ({
         equipments
