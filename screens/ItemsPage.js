@@ -1,17 +1,16 @@
-import {StyleSheet, ScrollView} from "react-native";
+import {FlatList, StyleSheet} from "react-native";
 import {ItemTile} from "../components/Tile";
-import {useDataContext} from "../context/DataContext";
+import {useItemDataProvider} from "../context/ItemContext";
 
 export function ItemsPage(){
-    const{items} = useDataContext()
+    const{equipments} = useItemDataProvider()
 
-    return(
-        <ScrollView style={styles.body}>
-            {items.map(item => (
-                <ItemTile data={item} key={item.id}/>
-            ))}
-        </ScrollView>
-    )
+    return<FlatList
+        style={styles.body}
+        data={equipments}
+        keyExtractor={equipment => equipment.id}
+        renderItem={({item}) => <ItemTile equipment={item}/>}
+    />
 }
 
 const styles = StyleSheet.create({

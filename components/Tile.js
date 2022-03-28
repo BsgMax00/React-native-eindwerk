@@ -2,23 +2,22 @@ import {StyleSheet, View, Text, TouchableOpacity} from "react-native"
 import {NAV_HERO_DETAIL, NAV_ITEMS_DETAIL} from "../navigation_constants";
 import {useNavigation} from "@react-navigation/native";
 
-const navigation = useNavigation()
+const navigation = useNavigation();
 
-
-export function HeroTile({data}) {
+export function HeroTile({hero}) {
     return <TouchableOpacity onPress={() => navigation.navigate(NAV_HERO_DETAIL)}>
             <View style={styles.tile}>
-                <Text style={styles.text}>{data.name}</Text>
-                <Text style={styles.text}>{data.troop}</Text>
+                <Text style={styles.text}>{hero.name}</Text>
+                <Text style={styles.text}>{hero.troop}</Text>
             </View>
         </TouchableOpacity>
 }
 
-export function ItemTile({data}){
+export function ItemTile({equipment}){
     return <TouchableOpacity onPress={() => navigation.navigate(NAV_ITEMS_DETAIL)}>
                 <View style={styles.tile}>
-                    <Text style={styles.text}>{data.name}</Text>
-                    <Text style={styles.text}>{data.damage}</Text>
+                    <Text style={styles.text}>{equipment.name}</Text>
+                    <Text style={styles.text}>{equipment.damage}</Text>
                 </View>
             </TouchableOpacity>
 }

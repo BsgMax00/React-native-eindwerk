@@ -1,16 +1,16 @@
 import {FlatList, StyleSheet} from "react-native";
-import {useDataContext} from "../context/DataContext";
+import {useHeroDataContext} from "../context/HeroContext";
 import {HeroTile} from "../components/Tile";
 
 export function HeroPage(){
-    const {heroes} = useDataContext();
+    const {heroes} = useHeroDataContext();
 
     return (
         <FlatList
              style={styles.body}
              data={heroes}
              keyExtractor={hero => hero.id}
-             renderItem={({item}) => <HeroTile data={item}/>}
+             renderItem={({item}) => <HeroTile hero={item}/>}
          />
     )
 }

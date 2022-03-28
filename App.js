@@ -10,8 +10,9 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {StyleSheet} from "react-native";
 import {NAV_HEROES, NAV_HOME, NAV_ITEMS, NAV_HERO_DETAIL, NAV_ITEMS_DETAIL} from "./navigation_constants";
 
-import {DataProvider} from "./context/DataContext";
+import {HeroDataProvider} from "./context/HeroContext";
 import {SafeAreaProvider} from "react-native-safe-area-context";
+import {ItemDataProvider} from "./context/ItemContext";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,9 +32,11 @@ export default function App() {
     return (
             <NavigationContainer>
                 <SafeAreaProvider>
-                    <DataProvider>
-                        <ProvidedApp/>
-                    </DataProvider>
+                    <HeroDataProvider>
+                        <ItemDataProvider>
+                            <ProvidedApp/>
+                        </ItemDataProvider>
+                    </HeroDataProvider>
                 </SafeAreaProvider>
             </NavigationContainer>
     );
