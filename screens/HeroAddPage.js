@@ -7,6 +7,7 @@ export function HeroAddPage(){
     const {addHero} = useHeroDataContext();
 
     const navigation = useNavigation();
+    const _ = require("lodash")
 
     return (
         <ScrollView style={styles.body}>
@@ -38,12 +39,14 @@ export function HeroAddPage(){
                 <Text style={styles.normalText}>Movement Speed:</Text>
                 <TextInput
                     style={styles.input}
+                    keyboardType={"number-pad"}
                     onChangeText={newText => setNewHero({...newHero, movementSpeed: newText})}/>
             </View>
             <View style={styles.textSeperator}>
                 <Text style={styles.normalText}>Attack Range:</Text>
                 <TextInput
                     style={styles.input}
+                    keyboardType={"number-pad"}
                     onChangeText={newText => setNewHero({...newHero, attackRange: newText})}/>
             </View>
             <View style={styles.textSeperator}>
@@ -52,7 +55,7 @@ export function HeroAddPage(){
                     style={styles.input}
                     onChangeText={newText => setNewHero({...newHero, description: newText})}/>
             </View>
-            <TouchableOpacity style={styles.button} onPress={() => {addHero(newHero), console.log(newHero), navigation.goBack()}}>
+            <TouchableOpacity style={styles.button} onPress={() => {setNewHero({...newHero, id: _.uniqueId()}), addHero(newHero), navigation.goBack()}}>
                 <Text style={styles.buttonText}> add new hero</Text>
             </TouchableOpacity>
         </ScrollView>

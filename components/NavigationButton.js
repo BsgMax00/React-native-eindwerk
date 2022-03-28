@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
         borderStyle: "solid",
         borderWidth: 1,
         backgroundColor: "#cac484"
-
     },
     buttonText: {
         textAlign: "center",
