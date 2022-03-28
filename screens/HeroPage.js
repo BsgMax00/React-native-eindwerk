@@ -5,14 +5,12 @@ import {HeroTile} from "../components/HeroTile";
 export function HeroPage(){
     const {heroes} = useHeroDataContext();
 
-    return (
-        <FlatList
+    return <FlatList
              style={styles.body}
              data={heroes}
              keyExtractor={hero => hero.id}
              renderItem={({item}) => <HeroTile hero={item}/>}
          />
-    )
 }
 
 const styles = StyleSheet.create({
