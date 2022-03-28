@@ -6,6 +6,7 @@ const HeroContext = createContext();
 export function HeroDataProvider(props){
     const [heroes] = useState(DATA_CHARACTERS);
 
+
     const api = useMemo(() => ({
         heroes
     }), [

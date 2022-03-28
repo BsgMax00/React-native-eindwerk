@@ -1,5 +1,5 @@
 import {StyleSheet, View, ScrollView} from "react-native";
-import {NAV_HEROES, NAV_ITEMS} from "../navigation_constants";
+import {NAV_HEROES, NAV_ITEMS, NAV_HERO_ADD} from "../navigation_constants";
 import {HomeScreenTextDump} from "../components/HomeScreenTextDump";
 import {NavigationButton} from "../components/NavigationButton";
 
@@ -8,8 +8,11 @@ export function HomeScreen(){
         <ScrollView style={styles.body}>
             <View>
                 <HomeScreenTextDump/>
-                <NavigationButton navigationTarget={NAV_HEROES}/>
-                <NavigationButton navigationTarget={NAV_ITEMS}/>
+                <View style={styles.buttonLocation}>
+                    <NavigationButton navigationTarget={NAV_HEROES} title={"Characters"}/>
+                    <NavigationButton navigationTarget={NAV_HERO_ADD} title={"add a Character"}/>
+                    <NavigationButton navigationTarget={NAV_ITEMS} title={"Items"}/>
+                </View>
             </View>
         </ScrollView>
     )
@@ -18,5 +21,8 @@ export function HomeScreen(){
 const styles = StyleSheet.create({
     body: {
         backgroundColor: "#cac492",
+    },
+    buttonLocation: {
+        marginVertical: 25,
     }
 })

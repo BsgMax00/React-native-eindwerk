@@ -3,12 +3,13 @@ import {HeroPage} from "./screens/HeroPage";
 import {ItemsPage} from "./screens/ItemsPage";
 import {HeroDetailPage} from "./screens/HeroDetailPage";
 import {ItemsDetailPage} from "./screens/ItemsDetailPage";
+import {HeroAddPage} from "./screens/HeroAddPage";
 
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
 import {StyleSheet} from "react-native";
-import {NAV_HEROES, NAV_HOME, NAV_ITEMS, NAV_HERO_DETAIL, NAV_ITEMS_DETAIL} from "./navigation_constants";
+import {NAV_HEROES, NAV_HOME, NAV_ITEMS, NAV_HERO_DETAIL, NAV_ITEMS_DETAIL, NAV_HERO_ADD, NAV_ITEM_ADD} from "./navigation_constants";
 
 import {HeroDataProvider} from "./context/HeroContext";
 import {SafeAreaProvider} from "react-native-safe-area-context";
@@ -24,6 +25,7 @@ function ProvidedApp(){
             <Stack.Screen name={NAV_HERO_DETAIL} component={HeroDetailPage} options={{title: "Hero Detail", headerStyle: styles.header, headerTitleAlign: "center"}}/>
             <Stack.Screen name={NAV_ITEMS} component={ItemsPage} options={{title: "Items", headerStyle: styles.header, headerTitleAlign: "center"}}/>
             <Stack.Screen name={NAV_ITEMS_DETAIL} component={ItemsDetailPage} options={{title: "Item Detail", headerStyle: styles.header, headerTitleAlign: "center"}}/>
+            <Stack.Screen name={NAV_HERO_ADD} component={HeroAddPage} options={{title: "add a Hero", headerStyle: styles.header, headerTitleAlign: "center"}}/>
         </Stack.Navigator>
     )
 }
