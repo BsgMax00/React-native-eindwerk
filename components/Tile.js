@@ -5,7 +5,8 @@ import {useNavigation} from "@react-navigation/native";
 const navigation = useNavigation()
 
 
-export function HeroTile({data}) {
+export function HeroTile(props) {
+    const {data} = props;
     return <TouchableOpacity onPress={() => navigation.navigate(NAV_HERO_DETAIL)}>
             <View style={styles.tile}>
                 <Text style={styles.text}>{data.name}</Text>
